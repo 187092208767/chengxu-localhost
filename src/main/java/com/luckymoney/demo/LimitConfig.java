@@ -18,20 +18,6 @@ public class LimitConfig {
     private BigDecimal minMoney;
     private String description;
 
-    String an=new String("nihao");
-
-   private static List<String> list=new ArrayList<String>();
-    public  void listmethod(){
-        list.add("nihao");
-        list.add("hello");
-    }
-
-    public  static  void main(String [] args){
-        for(String str:list){
-            System.out.print(str);
-        }
-    }
-
     public void setMaxmoney(BigDecimal maxmoney) {
         this.maxmoney = maxmoney;
     }
