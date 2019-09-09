@@ -19,9 +19,11 @@ public class LimitConfig {
     private String description;
 
     String an=new String("nihao");
+
    private static List<String> list=new ArrayList<String>();
     public  void listmethod(){
         list.add("nihao");
+        list.add("hello");
     }
 
     public  static  void main(String [] args){
