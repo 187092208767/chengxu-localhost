@@ -1,4 +1,4 @@
-package com.luckymoney.demo;
+package com.forOffer;
 
 import java.util.ArrayList;
 import java.util.Scanner;
