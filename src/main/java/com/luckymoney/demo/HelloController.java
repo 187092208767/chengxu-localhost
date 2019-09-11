@@ -25,7 +25,7 @@ public class HelloController {
     }
     //http传送的请求中可以含有参数
     @GetMapping("/say1")
-    public String say1(@RequestParam(value = "id",defaultValue = "",required = false) int id){
+    public String say1(@RequestParam(value = "id",defaultValue = "9999",required = false) int id){
         return "id:"+id;
     }
     @GetMapping
