@@ -9,6 +9,54 @@ import java.util.Scanner;
 public class Shunfeng {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int [] arr=new int[n];
+
+        for (int i=0;i<n;i++) {
+            arr[i]=sc.nextInt();
+        }
+        int count=0;
+        if (n!=1){
+            int [] tmp=new int[n];
+            tmp[0]=1;tmp[n-1]=1;
+            for (int i=0;i<n;i++) {
+                if (i==0||i==n-1) continue;
+                if (arr[i]>arr[i-1]&&arr[i]>arr[i+1]) {
+                    tmp[i]=Math.max(tmp[i-1],tmp[i+1])+1;
+                }else if (arr[i]>arr[i-1]) {
+                    tmp[i]=tmp[i-1]+1;
+                }else if (arr[i]>arr[i+1]){
+                    tmp[i]=tmp[i+1]+1;
+                }else tmp[i]=1;
+            }
+            for (int i=0;i<n;i++) {
+                count+=tmp[i];
+            }
+        System.out.println(count);
+    }
+}
+}
+
+        /*Scanner sc = new Scanner(System.in);
+        String in = sc.nextLine();
+        String[] str = in.split(",");
+
+        int size = str.length;
+        if (size == 0 || str == null) {
+            System.out.println(0);
+            return;
+        }
+        int start = 0;
+        int next = 1;
+        int count = 1;
+        while (next < size) {
+            if (!str[start++].equals(str[next++])) count++;
+        }
+        System.out.println(count);*/
+
+
+
+        /*Scanner sc=new Scanner(System.in);
         String input=sc.nextLine();
         int index=input.indexOf(":");
         String hour=input.substring(0,index);
@@ -72,7 +120,4 @@ public class Shunfeng {
         for (Integer re:result){
             System.out.print(re+" ");
         }
-    }
-    }
-
-}
+    }*/

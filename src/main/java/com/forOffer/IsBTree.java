@@ -3,7 +3,7 @@ package com.forOffer;
 
 public class IsBTree {
     public boolean IsBalanced_Solution(TreeNode root){
-    return  false;
+        return  getDepth(root)!= -1;
     }
     public int getDepth(TreeNode root){
         if (root==null) return 0;
@@ -11,23 +11,6 @@ public class IsBTree {
         if (left==-1) return -1;
         int right=getDepth(root.right);
         if (right==-1)return -1;
-        return -1;
-    }
-
-
-    public boolean isBalanceTree(TreeNode root){
-        if(root == null){
-            return true;
-        }
-        TreeNode temp = root.left;
-        root.left = root.right;
-        root.right = temp;
-        if(root.left != null){
-            isBalanceTree(root.left);
-        }
-        if(root.right != null){
-            isBalanceTree(root.right);
-        }
-        return false;
+        return Math.abs(left-right)>1?-1:Math.max(left,right)+1;
     }
 }
